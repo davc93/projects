@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Error404 } from './Routes/Error404'
-import { LoginPage } from './Routes/LoginPage'
-import { ProfilePage } from './Routes/ProfilePage'
-import { ProjectsPage } from './Routes/ProjectsPage'
+import { Error404 } from './routes/Error404'
+import { LoginPage } from './routes/LoginPage'
+import { ProfilePage } from './routes/ProfilePage'
+import { ProjectsPage } from './routes/ProjectsPage'
 
 function App () {
   return (

@@ -2,6 +2,6 @@ import React from 'react'
 
 export const EditProjectPage = () => {
   return (
-    <div>EditProjectPage</div>
+    <h1>EditProjectPage</h1>
   )
 }

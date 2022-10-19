@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { ContextProvider } from './context'
+import { useAuth } from './hooks/useAuth'
 import { Error404 } from './routes/Error404'
 import { LoginPage } from './routes/LoginPage'
 import { ProfilePage } from './routes/ProfilePage'
@@ -9,7 +10,8 @@ import { ProjectsPage } from './routes/ProjectsPage'
 
 
 function App() {
-  const auth = false
+  const {isAuth} = useAuth();
+  console.log(isAuth)
   return (
     <ContextProvider>
       <BrowserRouter>
@@ -18,7 +20,7 @@ function App() {
           <Route path="/" element={<ProjectsPage />} />
           <Route path='/project/:slug' element={<ProjectPage />} />
           <Route path="/login" element={(<LoginPage />)} />
-          <Route path="/profile" element={(auth ? <ProfilePage /> : <Navigate to={'/'} />)} />
+          <Route path="/profile" element={(isAuth ? <ProfilePage /> : <h1>No estas autorizado</h1>)} />
           <Route path="*" element={<Error404 />} />
 
         </Routes>

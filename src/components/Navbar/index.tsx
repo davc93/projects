@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Route } from '../models'
+import { logout } from '../../hooks/logout'
+import { Route } from '../../models'
 
 const routes: Route[] = [
     {
@@ -29,11 +30,13 @@ export const Navbar = () => {
             <div className="nav-right">
                 <ul>
                     {routes.map((route)=>(
-                        <li>
+                        <li key={route.path}>
                             <Link to={route.path}>{route.name}</Link>
                         </li>
                     ))}
-
+                    <button onClick={logout}>
+                      Logout
+                    </button>
                 </ul>
             </div>
         </nav>

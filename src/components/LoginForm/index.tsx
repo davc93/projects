@@ -6,12 +6,12 @@ export const LoginForm = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email,password);
     login(email,password)
       .then((response)=>{
-        console.log(response)
+        console.log("Autenticacion exitosa")
       })
       .catch((error)=>{
+        console.log('Problemas con tu autenticacion')
         console.log(error)
       })
 

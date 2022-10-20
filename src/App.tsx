@@ -11,7 +11,6 @@ import { ProjectsPage } from './routes/ProjectsPage'
 
 function App() {
   const {isAuth} = useAuth();
-  console.log(isAuth)
   return (
     <ContextProvider>
       <BrowserRouter>

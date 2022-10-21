@@ -1,5 +1,5 @@
 import React from 'react'
-import { login } from '../../hooks/login';
+import { login } from '../../firebase/auth';
 import './style.css'
 export const LoginForm = () => {
   const handleSubmit = (event:any) => {

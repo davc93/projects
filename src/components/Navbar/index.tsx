@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { logout } from '../../hooks/logout'
+import { logout } from '../../firebase/auth'
 import { Route } from '../../models'
 
 const routes: Route[] = [
@@ -24,6 +24,8 @@ const routes: Route[] = [
     }
   ]
 export const Navbar = () => {
+
+    const isAuth = false
     return (
         <nav>
             <div className="nav-left"></div>

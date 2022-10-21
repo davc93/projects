@@ -1,11 +1,18 @@
-import { getStorage, ref, uploadBytes } from "firebase/storage"
+import { getStorage, ref, StorageReference, uploadBytes } from "firebase/storage"
 import { Project } from "../models"
 import {collection,addDoc} from 'firebase/firestore'
-import { db } from "../firebase/config"
+import { db } from "./config"
 
 const storage = getStorage()
 const storageRef = ref(storage)
 const featuresImgRef = ref(storageRef,'featuresImages')
+
+export const uploadFile = async (ref: StorageReference, file:File) => {
+  const snapshot = await uploadBytes(ref,file)
+  console.log(snapshot);
+  console.log('Archivo subido')
+}
+
 export const uploadProject = async (project:Project) => {
     
     const {
@@ -16,10 +23,7 @@ export const uploadProject = async (project:Project) => {
     try {
 
         if(featureImage){
-
-            const snapshot = await uploadBytes(spaceRef,featureImage)
-            console.log(snapshot);
-            console.log('Archivo subido')
+          uploadFile(spaceRef,featureImage)
         }
         const docRef = await addDoc(collection(db,'projects'),{
             ...project,
@@ -31,9 +35,5 @@ export const uploadProject = async (project:Project) => {
         console.log('Ha habido un error')
         console.log(error)
     }
-
-    
-
-
 
 }

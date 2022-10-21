@@ -1,5 +1,5 @@
 import React from 'react'
-import { uploadProject } from '../../hooks/uploadProject'
+import { uploadProject } from '../../firebase/firestore'
 import './styles.css'
 export const ProjectForm = () => {
     // (e)=> uploadProject({

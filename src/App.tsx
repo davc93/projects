@@ -1,18 +1,16 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
-import { ContextProvider } from './context'
-import { useAuth } from './hooks/useAuth'
 import { Error404 } from './routes/Error404'
 import { LoginPage } from './routes/LoginPage'
 import { ProfilePage } from './routes/ProfilePage'
 import { ProjectPage } from './routes/ProjectPage'
 import { ProjectsPage } from './routes/ProjectsPage'
-
+import React from 'react'
+import { context } from './context'
 
 function App() {
-  const {isAuth} = useAuth();
+  const {isAuth} = React.useContext(context)
   return (
-    <ContextProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -25,7 +23,6 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-    </ContextProvider>
   )
 }
 

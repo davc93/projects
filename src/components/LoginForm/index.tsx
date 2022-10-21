@@ -1,14 +1,20 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { login } from '../../firebase/auth';
 import './style.css'
 export const LoginForm = () => {
+
+  const navigate = useNavigate()
   const handleSubmit = (event:any) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     login(email,password)
       .then((response)=>{
-        console.log("Autenticacion exitosa")
+        console.log("Autenticacion exitosa");
+        event.target.reset();
+        navigate('/profile')
+
       })
       .catch((error)=>{
         console.log('Problemas con tu autenticacion')

@@ -23,7 +23,7 @@ export const uploadProject = async (project:Project) => {
     try {
 
         if(featureImage){
-          uploadFile(spaceRef,featureImage)
+          await uploadFile(spaceRef,featureImage)
         }
         const docRef = await addDoc(collection(db,'projects'),{
             ...project,

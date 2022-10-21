@@ -9,7 +9,7 @@ import React from 'react'
 import { context } from './context'
 
 function App() {
-  const {isAuth} = React.useContext(context)
+  const {isAuth}:any = React.useContext(context)
   return (
       <BrowserRouter>
         <Navbar />

@@ -1,10 +1,13 @@
 import React from 'react'
 import { context } from '../context'
-
+import { ListOfProjects } from '../components/ListOfProjects'
 export const ProjectsPage = () => {
   
-  const {auth}:any = React.useContext(context)
   return (
-    <h1>Projects</h1>
+    <>
+      <h1>Projects</h1>
+      <ListOfProjects />
+    </>
+
   )
 }

@@ -44,13 +44,3 @@ export const uploadProject = async (project: ProjectDto) => {
     }
 
 }
-
-export const getProjects = async () => {
-
-
-}
-
-export const getProject = async () => {
-
-
-}

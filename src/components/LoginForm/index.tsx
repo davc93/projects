@@ -23,16 +23,16 @@ export const LoginForm = () => {
 
   }
   return (
-    <form className='login-form' onSubmit={handleSubmit}>
-        <div>
+    <form className='login-form rounded-xl flex flex-col gap-4 w-full lg:w-1/2 bg-blue-400 p-2 py-7 lg:px-16' onSubmit={handleSubmit}>
+        <div className='flex flex-col gap-3'>
             <label htmlFor="">Email</label>
-            <input type="text" name="email" placeholder='Email' />
+            <input className='bg-blue-300' type="text" name="email" placeholder='your email' />
         </div>
-        <div>
+        <div className='flex flex-col gap-3'>
             <label htmlFor="">Password</label>
-            <input type="password" name="password" placeholder='Password' />
+            <input className='bg-blue-300' type="password" name="password" placeholder='your password' />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className='self-center btn--secondary'>Submit</button>
     </form>
   )
 }

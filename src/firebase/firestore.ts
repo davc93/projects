@@ -31,13 +31,15 @@ export const uploadProject = async (project: ProjectDto) => {
                 featureImage: url
             })
             console.log(docRef)
+        } else {
+            const docRef = await addDoc(collection(db, 'projects'), {
+                ...project,
+                featureImage: null
+    
+            })
+            console.log("Documento escrito con exito", docRef.id);
         }
-        const docRef = await addDoc(collection(db, 'projects'), {
-            ...project,
-            featureImage: null
 
-        })
-        console.log("Documento escrito con exito", docRef.id);
     } catch (error) {
         console.log('Ha habido un error')
         console.log(error)

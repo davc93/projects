@@ -10,6 +10,11 @@ export const ContextProvider = ({children}:any) => {
     const projects = useGetProjects();
     const [isAuth, setIsAuth] = React.useState(false);
     const auth = getAuth(app);
+
+    const toggleDark = () => {
+
+        window.document.documentElement.classList.toggle('dark')
+    }
     onAuthStateChanged(auth,(user)=>{
         if(user){
             setIsAuth(true)
@@ -22,7 +27,8 @@ export const ContextProvider = ({children}:any) => {
     return (
         <context.Provider value={{
             isAuth,
-            projects
+            projects,
+            toggleDark
         }}>
             {children}
         </context.Provider>

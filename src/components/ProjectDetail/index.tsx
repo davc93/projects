@@ -8,7 +8,7 @@ export const ProjectDetail = ({ name, description, featureImage, envLink, repoLi
       <img className='h-96 lg:w-1/2 lg:h-screen object-fit ' src={featureImage} alt={name} />
       <div className='lg:mb-24'>
         <h1>{name}</h1>
-        <p >{description}</p>
+        <p className='dark:text-white' >{description}</p>
         <div className="project-detail__buttons flex flex-col items-center mt-8 gap-3 md:flex-row">
           <a className='btn--primary' href={envLink}>Go to App</a>
           <a className='btn--secondary' href={repoLink}>Go to Repo</a>

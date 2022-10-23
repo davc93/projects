@@ -4,24 +4,24 @@
 
 
 body {
-    @apply font-OpenSans
+    @apply font-OpenSans dark:bg-gray-800
 }
 
 h1 {
-    @apply font-bold text-4xl uppercase
+    @apply font-bold text-4xl uppercase dark:text-white
 
 }
 
 h2 {
-    @apply font-bold text-3xl
+    @apply font-bold text-3xl dark:text-white
 }
 
 h3 {
-    @apply font-semibold text-2xl
+    @apply font-semibold text-2xl 
 }   
 
 h4 {
-    @apply font-normal text-lg
+    @apply font-normal text-lg 
 }
 
 p {

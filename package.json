@@ -9,8 +9,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "firebase:emulators": "firebase emulators:start"
+    "preview": "vite preview"
+    
   },
   "dependencies": {
     "firebase": "^9.12.1",

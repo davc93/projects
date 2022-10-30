@@ -26,12 +26,12 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig)
 const functions = getFunctions(getApp())
-connectFunctionsEmulator(functions,"localhost",8080)
+// connectFunctionsEmulator(functions,"localhost",8080)
 export const storage = getStorage(app)
-connectStorageEmulator(storage, "localhost", 9199);
+// connectStorageEmulator(storage, "localhost", 9199);
 export const db = getFirestore(app)
-connectFirestoreEmulator(db,"localhost",8080)
+// connectFirestoreEmulator(db,"localhost",8080)
 export const auth = getAuth(app)
-connectAuthEmulator(auth, "http://localhost:9099");
+// connectAuthEmulator(auth, "http://localhost:9099");
 const analytics = getAnalytics(app)
  

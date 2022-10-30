@@ -75,7 +75,8 @@ export const Navbar = () => {
           <svg className="w-12 h-12 absolute right-0 top-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg>
         </button>
       </div>
-      {isActive && <div className="menu-mobile">
+      {isActive && 
+      <div className="menu-mobile">
         <ul className='lg:hidden  flex flex-col fixed pt-20 border-2 border-r-indigo-800 items-center gap-2 top-0 left-0 bg-gray-200 h-screen w-1/2'>
           {routes.map((route) => {
             if (route.onlyPublic && isAuth) {
@@ -97,7 +98,8 @@ export const Navbar = () => {
             </button>}
 
         </ul>
-      </div>}
+      </div>
+      }
     </nav>
   )
 }

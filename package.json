@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --fix",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "firebase:emulators":"firebase emulators:start"
+    "firebase:emulators": "firebase emulators:start"
   },
   "dependencies": {
     "firebase": "^9.12.1",
@@ -19,6 +19,7 @@
     "react-router-dom": "^6.4.2"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",

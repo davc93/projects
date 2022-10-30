@@ -1,6 +1,6 @@
 // Menu desktop
 .menu--desktop {
-
+    @apply hidden lg:block;
     width: 100%;
     position: fixed;
     justify-content: end;
@@ -102,13 +102,17 @@ ul li ul li a {
     position: absolute;
 }
 
-@media screen and (max-width:600px) {
-    .menu--desktop {
-        display: none !important;
-    }
-}
 
 // menu mobile
+.menu--mobile {
+    width: 100%;
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    position: fixed;
+    z-index: 2;
+    background: white;
+    box-shadow: 1px 1px 1px 0 #00000036;
+    @apply lg:hidden;
+}
 
 .menu--mobile .menu-items {
     padding-top: 120px;
@@ -124,6 +128,7 @@ ul li ul li a {
     transition: transform 0.5s ease-in-out;
     text-align: center;
     gap: 10px;
+    
 
 }
 
@@ -140,14 +145,7 @@ ul li ul li a {
     margin: auto;
 }
 
-.menu--mobile {
-    width: 100%;
-    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
-    position: fixed;
-    z-index: 2;
-    background: white;
-    box-shadow: 1px 1px 1px 0 #00000036;
-}
+
 
 .nav-container {
     display: flex;
@@ -266,10 +264,5 @@ ul li ul li a {
     display: none;
 }
 
-@media screen and (min-width:769px) {
-    .container.nav-container {
-        display: none;
-    }
-}
 
 

@@ -42,7 +42,9 @@ span {
 .link {
     @apply font-semibold text-base hover:text-blue-500
 }
-
+.link-active{
+    @apply font-semibold text-base text-primary-500
+}
 .btn--primary{
 
     color: var(--inv--primary);
@@ -140,4 +142,7 @@ span {
 .project-card img{
     @apply max-h-56
 }
+.simple-form {
+    @apply w-full lg:w-1/2 p-6 flex flex-col gap-2 
 
+}

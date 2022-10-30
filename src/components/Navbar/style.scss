@@ -13,9 +13,6 @@
 
         text-decoration: none;
 
-        &:hover {
-            color: var(--primary);
-        }
 
     }
 
@@ -40,17 +37,8 @@
 
         }
 
-        li a {
-            color: black;
-        }
 
-        li a:hover {
-            color: var(--primary);
-        }
 
-        li:hover {
-            cursor: pointer;
-        }
 
         ul li ul {
             visibility: hidden;
@@ -62,16 +50,7 @@
             background: white;
         }
 
-        ul li:hover>ul,
-        ul li ul:hover {
-            visibility: visible;
-            opacity: 1;
-            display: block;
-            min-width: 250px;
-            text-align: left;
-            padding-top: 20px;
-            box-shadow: 0px 3px 5px -1px #ccc;
-        }
+
 
         ul li ul li {
             clear: both;
@@ -81,11 +60,6 @@
             border-style: none;
         }
 
-        ul li ul li a:hover {
-            padding-left: 10px;
-            border-left: 2px solid var(--primary);
-            transition: all 0.3s ease;
-        }
     }
 }
 
@@ -155,22 +129,6 @@ ul li ul li a {
 }
 
 
-.menu--mobile .nav-container li {
-    list-style: none;
-}
-
-.menu--mobile .nav-container a,.menu--mobile .nav-container button {
-    text-decoration: none;
-    color: #0e2431;
-    font-weight: 500;
-    font-size: 2rem;
-    padding: 0.7rem;
-}
-
-.menu--mobile .nav-container a:hover,.menu--mobile .nav-container button:hover {
-    font-weight: bolder;
-}
-
 .nav-container {
     display: block;
     position: relative;
@@ -226,9 +184,8 @@ ul li ul li a {
 
 
 .menu--mobile .menu-items li {
+    list-style: none;
     margin-bottom: 1.2rem;
-    font-size: 1.5rem;
-    font-weight: 500;
 }
 
 .logo {

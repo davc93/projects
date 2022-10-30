@@ -38,13 +38,13 @@ export const ProjectForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} onChange={handleChange} >
+    <form onSubmit={handleSubmit} onChange={handleChange} className='simple-form' >
         <input type="text" name="projectName" id="name" placeholder='Nombre del proyecto' />
         <textarea name='projectDescription' id='description' placeholder='Descripcion'></textarea>
         <input type="text" name="repoLink" id='repoLink' placeholder='Repo link' />
         <input type="text" name="envLink" id='envLink' placeholder='Env Link' />
         <input type="file" name="featureImage" id='featureImage'/>
-        <button type="submit">Subir Proyecto</button>
+        <button className='btn btn--primary' type="submit">Subir Proyecto</button>
     </form>
   )
 }

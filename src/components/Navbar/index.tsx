@@ -32,11 +32,9 @@ const routes: Route[] = [
 ];
 export const Navbar = () => {
   const { isAuth, toggleDark }: any = useContext(context);
-  const [isActive, setIsActive] = React.useState(false);
 
   const handleLogout = () => {
     logout();
-    setIsActive(!isActive);
   };
   return (
 
@@ -56,10 +54,9 @@ export const Navbar = () => {
             return (
               <li key={route.path}>
                 <NavLink
-                  onClick={() => {
-                    setIsActive(!isActive);
-                  }}
-                  className="link"
+                  
+                  
+                  className={({isActive})=>(isActive ? 'link-active' : 'link')}
                   to={route.path}
                   end
                 >
@@ -102,10 +99,8 @@ export const Navbar = () => {
               return (
                 <li key={route.path}>
                   <NavLink
-                    onClick={() => {
-                      setIsActive(!isActive);
-                    }}
-                    className="link"
+                    
+                    className={({isActive})=>(isActive ? 'link-active' : 'link')}
                     to={route.path}
                     end
                   >

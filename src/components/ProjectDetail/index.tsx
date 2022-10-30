@@ -10,8 +10,8 @@ export const ProjectDetail = ({ name, description, featureImage, envLink, repoLi
         <h1>{name}</h1>
         <p className='dark:text-white' >{description}</p>
         <div className="project-detail__buttons flex flex-col items-center mt-8 gap-3 md:flex-row">
-          <a className='btn--primary' href={envLink}>Go to App</a>
-          <a className='btn--secondary' href={repoLink}>Go to Repo</a>
+          <a className='btn btn--primary' href={envLink}>Go to App</a>
+          <a className='btn btn--secondary' href={repoLink}>Go to Repo</a>
         </div>
       </div>
     </article>

@@ -10,7 +10,7 @@ export const ProjectCard = ({name,featureImage,description}:Project) => {
       <img src={featureImage || ''} alt={name} />
       <h3>{name}</h3>
       <p>{description}</p>
-      <Link className='btn--primary' to={`/project/${slug}`}>More details</Link>
+      <Link className='btn btn--primary' to={`/project/${slug}`}>More details</Link>
     </div>
   )
 }

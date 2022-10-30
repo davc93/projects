@@ -16,7 +16,9 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_measurementId,
   messagingSenderId: import.meta.env.VITE_messagingSenderId,
   appId: import.meta.env.VITE_appId
+
 }
+
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig)

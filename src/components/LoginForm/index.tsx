@@ -32,7 +32,7 @@ export const LoginForm = () => {
             <label htmlFor="">Password</label>
             <input className='bg-blue-300' type="password" name="password" placeholder='your password' />
         </div>
-        <button type="submit" className='self-center btn--secondary'>Submit</button>
+        <button type="submit" className='self-center btn btn--secondary'>Submit</button>
     </form>
   )
 }

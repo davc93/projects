@@ -7,6 +7,7 @@ import { ProjectPage } from './routes/ProjectPage'
 import { ProjectsPage } from './routes/ProjectsPage'
 import React from 'react'
 import { context } from './context'
+import { HomePage } from './routes/HomePage'
 
 function App() {
   const {isAuth}:any = React.useContext(context)
@@ -14,7 +15,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ProjectsPage />} />
+          <Route path='/' element={<HomePage/>} />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path='/project/:slug' element={<ProjectPage />} />
           <Route path="/login" element={(<LoginPage />)} />
           <Route path="/profile" element={(isAuth ? <ProfilePage /> : <h1>No estas autorizado</h1>)} />

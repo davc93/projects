@@ -6,8 +6,14 @@ import { Route } from '../../models'
 
 const routes: Route[] = [
   {
-    name: 'Projects',
+    name: 'About me',
     path: '/',
+    private: false,
+    onlyPublic: false
+  },
+  {
+    name: 'Projects',
+    path: '/projects',
     private: false,
     onlyPublic: false
   },

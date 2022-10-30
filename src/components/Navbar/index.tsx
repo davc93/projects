@@ -32,9 +32,21 @@ const routes: Route[] = [
 ];
 export const Navbar = () => {
   const { isAuth, toggleDark }: any = useContext(context);
+  const [checkHamburger, setCheckHamburger] = React.useState(false)
+  const handleMobileDarkMode = () =>{
+    toggleDark()
+    toggleMobileMenu()
+
+  }
+  const toggleMobileMenu = () => {
+
+    setCheckHamburger(!checkHamburger)
+  }
 
   const handleLogout = () => {
+    
     logout();
+    toggleMobileMenu()
   };
   return (
 
@@ -79,7 +91,7 @@ export const Navbar = () => {
       </div>
       <div className="menu--mobile">
         <div className="container nav-container">
-          <input className="checkbox" type="checkbox" />
+          <input className="checkbox" type="checkbox" checked={checkHamburger} onChange={toggleMobileMenu}  />
           <div className="hamburger-lines">
             <span className="line line1" />
             <span className="line line2" />
@@ -99,7 +111,7 @@ export const Navbar = () => {
               return (
                 <li key={route.path}>
                   <NavLink
-                    
+                    onClick={toggleMobileMenu}
                     className={({isActive})=>(isActive ? 'link-active' : 'link')}
                     to={route.path}
                     end
@@ -117,7 +129,7 @@ export const Navbar = () => {
               </li>
             )}
             <li>
-              <button onClick={toggleDark}>Dark Mode</button>
+              <button onClick={handleMobileDarkMode}>Dark Mode</button>
             </li>
           </div>
         </div>

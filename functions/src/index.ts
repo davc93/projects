@@ -4,7 +4,6 @@ import * as path from 'path'
 import * as sharp from 'sharp'
 
 const THUMB_MAX_WIDTH = 400;
-const THUMB_MAX_HEIGHT = 400;
 const gcs = new Storage();
 
 
@@ -41,7 +40,7 @@ exports.generateThumbnail = functions.storage.object().onFinalize((object) => {
 
     // Create Sharp pipeline for resizing the image and use pipe to read from bucket read stream
     const pipeline = sharp();
-    pipeline.resize(THUMB_MAX_WIDTH, THUMB_MAX_HEIGHT).pipe(thumbnailUploadStream);
+    pipeline.resize({width:THUMB_MAX_WIDTH}).pipe(thumbnailUploadStream);
     bucket.file(filePath).createReadStream().pipe(pipeline);
     return new Promise((resolve, reject) =>
       thumbnailUploadStream.on('finish', resolve).on('error', reject));

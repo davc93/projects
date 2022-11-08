@@ -26,10 +26,15 @@ export const uploadProject = async (project: ProjectDto) => {
         if (featureImage) {
             const spaceRef = ref(featuresImgRef, featureImage.name);
             const url = await uploadFile(spaceRef, featureImage)
+            const thumbName = `thumb_${featureImage.name}`
+            const urlThumb = [...url.split(featureImage.name)].join(thumbName)
+            console.log(urlThumb)
+            
             const docRef = await addDoc(collection(db, 'projects'), {
                 ...project,
-                featureImage: url
+                featureImage: urlThumb
             })
+
             console.log(docRef)
         } else {
             const docRef = await addDoc(collection(db, 'projects'), {

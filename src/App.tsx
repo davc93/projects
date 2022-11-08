@@ -8,6 +8,7 @@ import { ProjectsPage } from './routes/ProjectsPage'
 import React from 'react'
 import { context } from './context'
 import { HomePage } from './routes/HomePage'
+import { ContactPage } from './routes/ContactPage'
 
 function App() {
   const {isAuth}:any = React.useContext(context)
@@ -20,6 +21,7 @@ function App() {
           <Route path='/project/:slug' element={<ProjectPage />} />
           <Route path="/login" element={(<LoginPage />)} />
           <Route path="/profile" element={(isAuth ? <ProfilePage /> : <h1>No estas autorizado</h1>)} />
+          <Route path='/contact' element={<ContactPage/>} />
           <Route path="*" element={<Error404 />} />
 
         </Routes>

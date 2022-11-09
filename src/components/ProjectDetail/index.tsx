@@ -4,8 +4,8 @@ import { Project } from '../../models'
 
 export const ProjectDetail = ({ name, description, featureImage, envLink, repoLink }: Project) => {
   return (
-    <article className='flex flex-col gap-8 items-center md:text-start text-center md:flex-row-reverse'>
-      <img className='h-96 lg:w-1/2 lg:h-screen object-fit ' src={featureImage} alt={name} />
+    <article className='flex flex-col gap-8 items-center md:text-start text-center md:flex-row-reverse shadow-xl p-2 md:p-8'>
+      <img className="lg:w-96 lg:object-cover max-h-screen" src={featureImage} alt={name} />
       <div className='lg:mb-24'>
         <h1>{name}</h1>
         <p className='dark:text-white' >{description}</p>

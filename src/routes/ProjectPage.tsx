@@ -13,8 +13,8 @@ export const ProjectPage = () => {
   const project = projectsClean.find((project:any)=> project.name == slug )
   console.log(project)
   return (
-    <main className='mx-4 lg:mx-24'>
-      <section className='pt-24'>
+    <main className='pt-24'>
+      <section className='p-4 lg:p-8'>
         <ProjectDetail {...project} />
       </section>
     </main>

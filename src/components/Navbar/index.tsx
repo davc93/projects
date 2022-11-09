@@ -53,7 +53,6 @@ export const Navbar = () => {
     <nav className="z-10">
       <div className="menu--desktop primary-navigation">
         <div className="desktop-logo--container">
-          <img className="desktop-logo" src='' alt='Logo' />
         </div>
         <ul className="hidden lg:flex gap-2">
           {routes.map((route) => {

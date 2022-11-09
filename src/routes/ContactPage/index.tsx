@@ -29,8 +29,8 @@ export const ContactPage = () => {
 
             <section className="contact p-2 my-32 flex justify-center">
 
-                <div className="email flex flex-col md:flex-row w-full md:justify-around p-4 gap-16">
-                    <div className="social-media">
+                <div className="email flex flex-col md:flex-row w-full md:justify-around  gap-16">
+                    <div className="social-media p-4 md:p-12 shadow-lg flex flex-col justify-center">
                         <h3>Social Media</h3>
                         <div className="socia-icons--container flex items-center mt-4 gap-3">
                             <a href="https://www.linkedin.com/in/diego-vergara-casanova/" className="social-icon">
@@ -57,7 +57,7 @@ export const ContactPage = () => {
 
 
                     </div>
-                    <div className="email flex flex-col gap-4">
+                    <div className="email flex flex-col gap-4 shadow-lg p-4 md:p-12">
                         <h3 className="">Email</h3>
 
                         <span className="self-start text-gray-400">davc93@gmail.com</span>

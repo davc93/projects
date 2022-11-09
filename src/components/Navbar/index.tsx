@@ -89,7 +89,7 @@ export const Navbar = () => {
             </li>
           )}
           <li>
-            <button onClick={toggleDark}>Dark Mode</button>
+            <button onClick={toggleDark}><svg className="w-6 h-6 fill-white bg-black dark:fill-black dark:bg-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg></button>
           </li>
         </ul>
       </div>
@@ -133,7 +133,7 @@ export const Navbar = () => {
               </li>
             )}
             <li>
-              <button onClick={handleMobileDarkMode}>Dark Mode</button>
+              <button onClick={handleMobileDarkMode}><svg className="w-6 h-6 fill-white bg-black dark:fill-black dark:bg-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg></button>
             </li>
           </div>
         </div>

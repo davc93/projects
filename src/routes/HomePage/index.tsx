@@ -18,15 +18,15 @@ export const HomePage = () => {
               <img
                 src="https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,w_200,g_face/v1661641671/personal-website/foto_mia2_vmu1nm.jpg"
                 alt="Diego Vergara"
-                className="hero__img w-60"
+                className="hero__img w-60 rounded-3xl"
               />
               <span className="text-center self-center">Frontend Developer</span>
             </div>
           </div>
         </header>
-        <main className="p-2 md:p-4">
-          <section className="about-me">
-            <div className="about-me--container h-screen flex justify-center items-center flex-col">
+        <main className="px-8 md:px-24">
+          <section className="about-me my-32">
+            <div className="about-me--container md:w-2/3 flex flex-col gap-4">
               <h2>About me</h2>
               <p>
                 I am a business administrator by profession, I worked in
@@ -37,12 +37,15 @@ export const HomePage = () => {
               </p>
             </div>
           </section>
-          <section className="cta--projects flex flex-col gap-2 text-center">
+          <section className="cta--projects flex flex-col gap-2 text-center items-center">
             <h2>See my portfolio</h2>
             <h4>take a look of what can we build</h4>
             <Link to='/projects' className="btn btn--primary mt-8">Click here</Link>
           </section>
         </main>
+        <footer className="h-32">
+
+        </footer>
       
     </>
   );

@@ -41,7 +41,6 @@ export const Navbar = () => {
   const [checkHamburger, setCheckHamburger] = React.useState(false)
   const handleMobileDarkMode = () =>{
     toggleDark()
-    toggleMobileMenu()
 
   }
   const toggleMobileMenu = () => {

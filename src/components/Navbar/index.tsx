@@ -29,6 +29,12 @@ const routes: Route[] = [
     private: false,
     onlyPublic: true,
   },
+  {
+    name: "Contact",
+    path: "/contact",
+    private: false,
+    onlyPublic: false,
+  }
 ];
 export const Navbar = () => {
   const { isAuth, toggleDark }: any = useContext(context);

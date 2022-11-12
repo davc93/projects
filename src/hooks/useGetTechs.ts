@@ -10,7 +10,7 @@ export const useGetTechs = () => {
             const techQuery:Tech[] = []
             const querySnapshot = await getDocs(collection(db,'techs'));
             querySnapshot.forEach((doc:any)=>{
-                techQuery.push(doc.data())
+                techQuery.push({...doc.data(),id:doc.id})
             })
             setTechs(techQuery)
         }

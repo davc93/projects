@@ -24,6 +24,7 @@ export const ProjectForm = () => {
     if(event.target.selectedOptions){
       const techs = [...event.target.selectedOptions]
       const techsClean = techs.map((tech)=>tech.value)
+      console.log(techsClean);
       setdata({...data,techs:techsClean})
       
       
@@ -62,7 +63,7 @@ export const ProjectForm = () => {
       <select multiple id='techs'>
         {techs.map((tech:Tech)=>(
 
-          <option key={tech.name} value={tech.name}>{tech.name}</option>
+          <option key={tech.id} value={tech.id}>{tech.name}</option>
 
         ))}
       </select>

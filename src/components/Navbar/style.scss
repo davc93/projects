@@ -16,7 +16,8 @@
     }
 
     &.primary-navigation {
-        display: flex;
+        @apply hidden lg:flex;
+        
         text-align: center;
         font-size: 16px;
         padding-right: 50px;

@@ -1,11 +1,10 @@
 // Menu desktop
 .menu--desktop {
-    @apply hidden lg:block;
+    @apply hidden lg:block z-10;
     width: 100%;
     position: fixed;
     justify-content: end;
     padding: 20px 0;
-    z-index: 1;
     background: white;
     box-shadow: 1px 1px 1px 0 #00000057;
 

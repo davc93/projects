@@ -1,13 +1,17 @@
 import React, { FormEvent } from 'react'
 import { uploadProject } from '../../firebase/firestore'
+import { useGetTechs } from '../../hooks/useGetTechs'
+import { Tech } from '../../models'
 import './styles.css'
 export const ProjectForm = () => {
-
+  const techs =  useGetTechs()
+  console.log(techs)
   const [data, setdata]:any = React.useState({
     name:'',
     description:'',
     repoLink:'',
     envLink:'',
+    techs:[],
     featureImage: null
 
   })
@@ -15,17 +19,27 @@ export const ProjectForm = () => {
     if(event.target.files){
       console.log('es un archivos')
       data["featureImage"] = event.target.files[0]
-    } else {
+    }
+
+    if(event.target.selectedOptions){
+      const techs = [...event.target.selectedOptions]
+      const techsClean = techs.map((tech)=>tech.value)
+      setdata({...data,techs:techsClean})
+      
+      
+    }
+    
+    
+    else {
     
       const id = event.target.id
       const value = event.target.value
       data[id] = value
     }
-      
-    console.log(data)
   }
   const handleSubmit = async (event:any) => {
     event.preventDefault()
+    // console.log(data)
     try {
       const response = await uploadProject(data);
       console.log(response);
@@ -44,6 +58,14 @@ export const ProjectForm = () => {
         <input type="text" name="repoLink" id='repoLink' placeholder='Repo link' />
         <input type="text" name="envLink" id='envLink' placeholder='Env Link' />
         <input type="file" name="featureImage" id='featureImage'/>
+
+      <select multiple id='techs'>
+        {techs.map((tech:Tech)=>(
+
+          <option key={tech.name} value={tech.name}>{tech.name}</option>
+
+        ))}
+      </select>
         <button className='btn btn--primary' type="submit">Subir Proyecto</button>
     </form>
   )

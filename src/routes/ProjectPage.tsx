@@ -8,14 +8,13 @@ import { Project } from '../models'
 export const ProjectPage = () => {
   const {projects}:any = useContext(context)
   const {slug} = useParams()
-  const projectsClean = projects.map((project:Project) => ({...project, name: project.name.replaceAll(' ','-').toLowerCase()}))
-  console.log(projectsClean)
-  const project = projectsClean.find((project:any)=> project.name == slug )
-  console.log(project)
+  const projectSearched = projects.find((project:Project)=> project.name.replaceAll(' ','-').toLowerCase() == slug )
+  console.log(projectSearched);
+  // project.name.replaceAll('-',' ')
   return (
     <main className='pt-24'>
       <section className='p-4 lg:p-8'>
-        <ProjectDetail {...project} />
+        <ProjectDetail {...projectSearched} />
       </section>
     </main>
   )

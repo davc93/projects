@@ -26,3 +26,7 @@ export interface Project {
     envLink: string
     featureImage?: string,
 }
+export interface Tech {
+
+    name: string
+}

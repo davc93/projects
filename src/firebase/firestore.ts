@@ -1,5 +1,5 @@
 import { getStorage, ref, StorageReference, uploadBytes, getDownloadURL } from "firebase/storage"
-import { ProjectDto } from "../models"
+import { ProjectDto, Tech } from "../models"
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from "./config"
 
@@ -11,6 +11,20 @@ const featuresImgRef = ref(storageRef, 'featuresImages')
 const getUrl = async (ref:StorageReference) => {
     const url = await getDownloadURL(ref)
     return url
+}
+
+export const uploadTech = async (tech:Tech)=>{
+    try {
+        const doc = await addDoc(collection(db, 'techs'),
+        
+    
+        tech
+    )
+    console.log(doc);        
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 export const uploadFile = async (ref: StorageReference, file: File) => {
     await uploadBytes(ref, file)

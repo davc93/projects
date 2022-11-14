@@ -17,7 +17,7 @@ export const useGetProjects = () => {
         getProjects()
         
     },[])
-    
+    console.log(projects);
     
     
     return projects

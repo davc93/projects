@@ -156,4 +156,7 @@ li{
 .card--tech-project-detail{
     @apply flex flex-col items-center
 }
+.card--tech-project-detail span{
+    @apply  font-bold text-gray-600
+}
 

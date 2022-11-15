@@ -12,7 +12,7 @@ export const ProjectDetail = ({ name, description, featureImage, envLink, repoLi
         <h1 className='mb-4'>{name}</h1>
         <p className='dark:text-white' >{description}</p>
         
-        {techs ? (<div className="techs">
+        {techs ? (<div className="techs flex mt-8 gap-4">
           {techs.map((tech)=> (
             <div key={tech.name} className='card--tech-project-detail'>
               <img className='w-14 h-14' src={`/${tech.name}.svg`} alt={tech.name} />

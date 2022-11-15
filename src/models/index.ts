@@ -25,7 +25,7 @@ export interface Project {
     repoLink: string,
     envLink: string
     featureImage?: string,
-    techs:string[]
+    techs:Tech[]
 }
 export interface Tech {
     id:string,

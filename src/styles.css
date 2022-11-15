@@ -153,4 +153,7 @@ li{
 
     @apply flex flex-col items-center
 }
+.card--tech-project-detail{
+    @apply flex flex-col items-center
+}
 

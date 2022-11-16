@@ -5,7 +5,7 @@ export const HomePage = () => {
   return (
     <>
         <header className="p-2 md:p-4">
-          <div className="hero--container bg-primary-60 flex flex-row-reverse flex-wrap justify-evenly pt-32 w-full gap-4">
+          <div className="hero--container bg-primary-60 flex flex-row-reverse flex-wrap justify-evenly w-full gap-4">
             <div className="hero__text--container space-y-4 w-full sm:w-1/2 md:text-end">
               <h1>Diego Vergara</h1>
               <p>

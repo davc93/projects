@@ -12,7 +12,7 @@ export const ProjectPage = () => {
   console.log(projectSearched);
   // project.name.replaceAll('-',' ')
   return (
-    <main className='pt-24'>
+    <main >
       <section className='p-4 lg:p-8'>
         <ProjectDetail {...projectSearched} />
       </section>

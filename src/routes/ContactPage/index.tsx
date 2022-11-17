@@ -20,7 +20,7 @@ export const ContactPage = () => {
     }
 
     return (
-        <main className="pt-24 lg:p-8 lg:pt-24">
+        <main className="lg:p-8 ">
             <header className="flex justify-center text-center">
 
                 <h1>Contact me and build an idea together </h1>

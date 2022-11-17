@@ -37,7 +37,6 @@ export const useGetProjects = () => {
 
         
     },[])
-    console.log(projects);
     
     
     return projects

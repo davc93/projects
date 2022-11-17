@@ -1,7 +1,13 @@
-export interface Page {
-    name: string;
-    path: string;
+export interface Service {
+
+    name:string,
+    path:string,
+    description:string,
+    price:number,
+    discount:number
 }
+
+
 
 export interface Route {
 

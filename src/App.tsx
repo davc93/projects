@@ -15,6 +15,15 @@ import { Layout } from './components/Layout'
 
 function App() {
   const {isAuth}:any = React.useContext(context)
+  React.useEffect(()=>{
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://sdk.mercadopago.com/js/v2";
+    //For head
+    document.head.appendChild(script);
+
+  },[])
   return (
       <BrowserRouter>
         <Layout>

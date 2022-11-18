@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { Paybutton } from '../../components/Paybutton'
 import { context } from '../../context'
 import { Service } from '../../models'
 
@@ -25,6 +26,7 @@ export const ServiceDetail = () => {
           {service.discount && (<span>{service.price * (1 - service.discount)}</span>)}
           <p>Each section has the size of the monitor display</p>
           <button onClick={handleClick} className='btn btn--primary'>Contactar</button>
+          <Paybutton/>
         </article>
       </header>
     )

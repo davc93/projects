@@ -1,7 +1,7 @@
 import React from "react";
 
 const publicKey = import.meta.env.VITE_MP_PUBLIC;
-
+declare var MercadoPago: any
 export const Paybutton = () => {
   React.useEffect(() => {
     const createPreference = async () => {

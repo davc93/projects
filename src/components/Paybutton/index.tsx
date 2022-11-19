@@ -32,6 +32,7 @@ export const Paybutton = (props:any) => {
         },
         render: {
           container: ".cho-container",
+          
           label: "Pagar",
         },
       });

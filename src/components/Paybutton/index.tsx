@@ -7,8 +7,7 @@ export const Paybutton = (props:any) => {
   React.useEffect(() => {
   
     const createPreference = async (items:Item[]) => {
-      debugger
-      
+     
       const response = await fetch(
         "https://davc93.uw.r.appspot.com/create_preference",
         {

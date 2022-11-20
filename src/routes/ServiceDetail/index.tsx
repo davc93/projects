@@ -41,7 +41,7 @@ export const ServiceDetail = () => {
             <span>{service.price * (1 - service.discount)}</span>
           )}
           <p>Each section has the size of the monitor display</p>
-          <div className="service-detail__buttons flex flex-col md:flex-row">
+          <div className="service-detail__buttons flex flex-col md:flex-row gap-3">
             <button onClick={handleClick} className="btn btn--primary">
               Contactar
             </button>

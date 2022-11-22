@@ -9,15 +9,17 @@ export const Paybutton = (props:any) => {
   React.useEffect(() => {
   
     const createPreference = async (items:Item[]) => {
-     
+      const preferenceRequest = {
+        ...items
+      }
       const response = await fetch(
-        "https://davc93.uw.r.appspot.com/create_preference",
+        "https://mercadopago.onrender.com/create_preference",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(items),
+          body: JSON.stringify(preferenceRequest),
         }
       );
       const preference = await response.json();

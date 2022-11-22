@@ -31,7 +31,7 @@ export const Paybutton = (props:any) => {
     createPreference(props.items);
   }, []);
   const handleClick = () => {
-    debugger
+    
     const mp = new MercadoPago(publicKey, {
       locale: "es-CL",
     });

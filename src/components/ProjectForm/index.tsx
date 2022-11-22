@@ -18,7 +18,8 @@ export const ProjectForm = () => {
   const handleChange = (event:any) => {
     if(event.target.files){
       console.log('es un archivos')
-      data["featureImage"] = event.target.files[0]
+      setdata({...data,featureImage:event.target.files[0]})
+      
     }
 
     if(event.target.selectedOptions){
@@ -39,6 +40,7 @@ export const ProjectForm = () => {
     }
   }
   const handleSubmit = async (event:any) => {
+    console.log(data)
     event.preventDefault()
     // console.log(data)
     try {

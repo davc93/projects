@@ -5,22 +5,22 @@ import {connectStorageEmulator, getStorage, ref} from 'firebase/storage'
 import {connectFirestoreEmulator, getFirestore} from 'firebase/firestore'
 import { getAuth,connectAuthEmulator } from 'firebase/auth'
 import {connectFunctionsEmulator, getFunctions} from 'firebase/functions'
+import { config } from '../config'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_apiKey,
-  authDomain: import.meta.env.VITE_authDomain,
-  projectId: import.meta.env.VITE_projectId,
-  storageBucket: import.meta.env.VITE_storageBucket,
-  measurementId: import.meta.env.VITE_measurementId,
-  messagingSenderId: import.meta.env.VITE_messagingSenderId,
-  appId: import.meta.env.VITE_appId
+  apiKey: config.API_KEY,
+  authDomain: 'davc93.firebaseapp.com',
+  projectId: 'davc93',
+  storageBucket: 'davc93.appspot.com',
+  measurementId: 'G-Q13GH0X2RQ',
+  messagingSenderId: '605943476916',
+  appId: '1:605943476916:web:ab4c1cd630fb44c9229de1'
 
 }
-
 
 
 // Initialize Firebase

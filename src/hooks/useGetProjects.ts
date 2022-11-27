@@ -1,43 +1,30 @@
 import React from "react";
-import { getDocs ,collection, getDoc, doc} from 'firebase/firestore'
-import { db } from "../firebase/config";
-import { Project, Tech } from "../models";
+
+import { getCompleteProjects } from "../utils/getProjects";
 export const useGetProjects = () => {
+  const [projects, setProjects]: any = React.useState([]);
+  const [loading, setLoading] = React.useState() ;
+  const [error, setError] = React.useState(null);
+  React.useEffect(() => {
 
-    const [projects, setProjects]:any = React.useState([]);
-    React.useEffect(()=>{
-        const getTechs = (techs:string[]) => {
-            const techsResolved:Tech[] = []
-            techs.forEach((tech)=>{
-                
-                getDoc(doc(db,"techs",tech)).then((response:any)=>{
-                    techsResolved.push(response.data())
-                })
-            })
-            return techsResolved
-        }
+    const getProjects = async () => {
+      setLoading(true)
+      try {
+        const projects = await getCompleteProjects()
+        setProjects(projects)
+        setLoading(false)
+      } catch (error) {
+        setError("Error");
+        setLoading(false)
+      }
+    };
 
-        const getProjects = async () => {
-            const projectQuery:Project[] = []
-            
-            const querySnapshot = await getDocs(collection(db,'projects'));
-            querySnapshot.forEach((doc:any)=>{
-                
+    getProjects();
+  }, []);
 
-                const project = doc.data()
-                if(project.techs){
-                    project.techs = getTechs(project.techs) 
-                }
-                projectQuery.push(project)
-            })
-            setProjects(projectQuery)
-        }
-
-        getProjects()
-
-        
-    },[])
-    
-    
-    return projects
-}
+  return {
+    projects,
+    loading,
+    error,
+  };
+};

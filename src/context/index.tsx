@@ -8,7 +8,7 @@ import { useGetServices } from "../hooks/useGetServices";
 export const context = React.createContext({});
 
 export const ContextProvider = ({children}:any) => {
-    const projects = useGetProjects();
+    const {projects,loading} = useGetProjects();
     const {services} = useGetServices()
     const [isAuth, setIsAuth] = React.useState(false);
     const auth = getAuth(app);

@@ -2,10 +2,13 @@ import './styles.css'
 import React from 'react'
 import { Project } from '../../models'
 import { context } from '../../context'
-export const ProjectDetail = ({slug}) => {
+type slug = {
+  slug:string | undefined
+}
+export const ProjectDetail = ({slug}:slug) => {
   const {projects}:any = React.useContext(context)
   console.log(projects,slug)
-  const projectSearched = projects.find((project:Project)=> project.name.replaceAll(' ','-').toLowerCase() == slug )
+  const projectSearched:Project = projects.find((project:Project)=> project.name.replaceAll(' ','-').toLowerCase() == slug )
 
   if(projectSearched){
     const { name, description, featureImage, envLink, repoLink, techs } = projectSearched

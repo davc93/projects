@@ -9,50 +9,41 @@ const getProjects = async () => {
   querySnapshot.forEach((doc: any) => {
     const projectWithoutTech = doc.data();
     projectQuery.push(projectWithoutTech);
-    // const data = techs.map((firestoreDoc) => firestoreDoc.data());
   });
-  return projectQuery
+  return projectQuery;
 };
 
-const getTechs = (project) => {
-    return new Promise(async (resolve,reject)=>{
-        const techsPromises = project.techs.map((tech)=>{
-            return getDoc(doc(db, "techs", tech)).then((result)=> result.data());
-        })
-        Promise.all(techsPromises).then((values)=>{
-            resolve(values)
-        })
-
-
-    })
-}
+const getTechs = (project:Project) => {
+  return new Promise(async (resolve, reject) => {
+    const techsPromises = project.techs.map((tech:any) => {
+      return getDoc(doc(db, "techs", tech)).then((result) => result.data());
+    });
+    Promise.all(techsPromises).then((values) => {
+      resolve(values);
+    });
+  });
+};
 
 const getCompleteProjects = async () => {
-
-    return new Promise(async (resolve, reject) => {
-        const projectsWithoutTechs = await getProjects()
-        projectsWithoutTechs.forEach((project)=>{
-            const techs = getTechs(project)
-            project.techs = techs
-            
-        })
-        projectsWithoutTechs.forEach((project)=>{
-            project.techs.then((result)=>{
-                project.techs = result
-                if(projectsWithoutTechs.indexOf(project) === projectsWithoutTechs.length -1){
-                    console.log(project)
-                    resolve(projectsWithoutTechs)
-                    
-                } 
-            })
-        })
+  return new Promise(async (resolve, reject) => {
+    const projectsWithoutTechs = await getProjects();
+    projectsWithoutTechs.forEach((project:any) => {
+      const techs = getTechs(project);
+      project.techs = techs;
     });
-    
-
-
-    // const projects = await getProjectsWithTechs(projectsWithoutTechs)
-    
-
+    projectsWithoutTechs.forEach((project:any) => {
+      project.techs.then((result:Project) => {
+        project.techs = result;
+        if (
+          projectsWithoutTechs.indexOf(project) ===
+          projectsWithoutTechs.length - 1
+        ) {
+          console.log(project);
+          resolve(projectsWithoutTechs);
+        }
+      });
+    });
+  });
 };
 
 export { getCompleteProjects };

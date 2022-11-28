@@ -5,8 +5,6 @@ export const markdownToHtml = async (markdownUrl: string) => {
     })
     const markdown = await response.text()
     const converter = new Showdown.Converter()
-    console.log(response);
-    console.log(markdown);
     const html = converter.makeHtml(markdown);
     return html
 }

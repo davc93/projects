@@ -2,7 +2,7 @@ export interface Service {
 
     name:string,
     path:string,
-    description:string,
+    description:any,
     price:number,
     discount:number
 }

@@ -12,6 +12,10 @@ export const ServiceDetail = () => {
   const service: Service = services.find((service: Service) => service.name.replaceAll(' ', '-').toLowerCase() == slug)
   
   if (service) {
+    function createMarkup() {
+      return {__html: service.description};
+    }
+    
     const priceFormated = new Intl.NumberFormat('en-US',{
       style:'currency',
       currency:'CLP'
@@ -20,7 +24,7 @@ export const ServiceDetail = () => {
       <header className='mx-6 md:mx-24 mt-8'>
         <article className='flex flex-col gap-4 md:w-2/3'>
           <h1>{service.name}</h1>
-          <p>{service.description}</p>
+          <div dangerouslySetInnerHTML={createMarkup()}/>
           <span>{ priceFormated.format(service.price) } / Per section</span>
           {service.discount && (<span>{service.price * (1 - service.discount)}</span>)}
           <p>Each section has the size of the monitor display</p>

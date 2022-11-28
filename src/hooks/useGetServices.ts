@@ -1,23 +1,17 @@
-import { collection, doc, getDocs } from "firebase/firestore"
 import React from "react"
-import { db } from "../firebase/config"
+import { Service } from "../models"
+import { getServices } from "../utils/getServices"
 
 export const useGetServices = () => {
-    const [services, setServices] = React.useState([])
+    const [services, setServices] = React.useState<Service>()
     React.useEffect(()=>{
-        const getServices = () => {
-            const services:any = []
-            getDocs(collection(db,'services'),)
-            .then((res)=>{
-                res.forEach((service)=>{
-                    services.push(service.data())
-                })
-                
-            })
+        const fetchServices = async () => {
+
+            const services:any = await getServices()
             setServices(services)
             
         }
-        getServices()
+        fetchServices()
 
     },[])
     return {

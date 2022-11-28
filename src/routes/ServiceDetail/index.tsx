@@ -10,16 +10,16 @@ export const ServiceDetail = () => {
   const { services }:any = useContext(context)
   const { slug } = useParams()
   const service: Service = services.find((service: Service) => service.name.replaceAll(' ', '-').toLowerCase() == slug)
+  function createMarkup() {
+    return {__html: service.description};
+  }
   
+  const priceFormated = new Intl.NumberFormat('en-US',{
+    style:'currency',
+    currency:'CLP'
+  })
   if (service) {
-    function createMarkup() {
-      return {__html: service.description};
-    }
     
-    const priceFormated = new Intl.NumberFormat('en-US',{
-      style:'currency',
-      currency:'CLP'
-    })
     return (
       <header className='mx-6 md:mx-24 mt-8'>
         <article className='flex flex-col gap-4 md:w-2/3'>
@@ -34,7 +34,7 @@ export const ServiceDetail = () => {
     )
   } else {
     return (
-      <></>
+      <div>Cargando...</div>
     )
   }
 }

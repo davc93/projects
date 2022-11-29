@@ -4,14 +4,12 @@
 import allData from './data'
 
 class Database {
-  constructor() {}
+  constructor () {}
 
-  getAll() {
+  getAll () {
     const asArray = Object.values(allData)
     return asArray
   }
-
 }
-
 
 export default Database

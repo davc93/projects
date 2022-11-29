@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const ServicesPage = () => {
   return (
@@ -30,6 +30,5 @@ export const ServicesPage = () => {
         </section>
       </main>
     </>
-  );
-};
-
+  )
+}

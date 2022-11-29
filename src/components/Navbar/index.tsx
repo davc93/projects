@@ -1,64 +1,61 @@
-import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
-import { context } from "../../context";
-import { logout } from "../../firebase/auth";
-import { Route } from "../../models";
+import React, { useContext } from 'react'
+import { NavLink } from 'react-router-dom'
+import { context } from '../../context'
+import { logout } from '../../firebase/auth'
+import { Route } from '../../models'
 import './style.scss'
 const routes: Route[] = [
   {
-    name: "About me",
-    path: "/",
+    name: 'About me',
+    path: '/',
     private: false,
-    onlyPublic: false,
+    onlyPublic: false
   },
   {
-    name: "Services",
-    path: "/services",
+    name: 'Services',
+    path: '/services',
     private: false,
-    onlyPublic: false,
+    onlyPublic: false
   },
   {
-    name: "Projects",
-    path: "/projects",
+    name: 'Projects',
+    path: '/projects',
     private: false,
-    onlyPublic: false,
+    onlyPublic: false
   },
   {
-    name: "Profile",
-    path: "/profile",
+    name: 'Profile',
+    path: '/profile',
     private: true,
-    onlyPublic: false,
+    onlyPublic: false
   },
   {
-    name: "Login",
-    path: "/login",
+    name: 'Login',
+    path: '/login',
     private: false,
-    onlyPublic: true,
+    onlyPublic: true
   },
   {
-    name: "Contact",
-    path: "/contact",
+    name: 'Contact',
+    path: '/contact',
     private: false,
-    onlyPublic: false,
+    onlyPublic: false
   }
-];
+]
 export const Navbar = () => {
-  const { isAuth, toggleDark }: any = useContext(context);
+  const { isAuth, toggleDark }: any = useContext(context)
   const [checkHamburger, setCheckHamburger] = React.useState(false)
-  const handleMobileDarkMode = () =>{
+  const handleMobileDarkMode = () => {
     toggleDark()
-
   }
   const toggleMobileMenu = () => {
-
     setCheckHamburger(!checkHamburger)
   }
 
   const handleLogout = () => {
-    
-    logout();
+    logout()
     toggleMobileMenu()
-  };
+  }
   return (
 
     <nav className="z-10">
@@ -68,24 +65,23 @@ export const Navbar = () => {
         <ul className="hidden lg:flex gap-2">
           {routes.map((route) => {
             if (route.onlyPublic && isAuth) {
-              return null;
+              return null
             }
             if (route.private && !isAuth) {
-              return null;
+              return null
             }
             return (
               <li key={route.path}>
                 <NavLink
-                  
-                  
-                  className={({isActive})=>(isActive ? 'link-active' : 'link')}
+
+                  className={({ isActive }) => (isActive ? 'link-active' : 'link')}
                   to={route.path}
                   end
                 >
                   {route.name}
                 </NavLink>
               </li>
-            );
+            )
           })}
           {isAuth && (
             <li>
@@ -101,7 +97,7 @@ export const Navbar = () => {
       </div>
       <div className="menu--mobile">
         <div className="container nav-container">
-          <input className="checkbox" type="checkbox" checked={checkHamburger} onChange={toggleMobileMenu}  />
+          <input className="checkbox" type="checkbox" checked={checkHamburger} onChange={toggleMobileMenu} />
           <div className="hamburger-lines">
             <span className="line line1" />
             <span className="line line2" />
@@ -113,23 +109,23 @@ export const Navbar = () => {
           <div className="menu-items">
             {routes.map((route) => {
               if (route.onlyPublic && isAuth) {
-                return null;
+                return null
               }
               if (route.private && !isAuth) {
-                return null;
+                return null
               }
               return (
                 <li key={route.path}>
                   <NavLink
                     onClick={toggleMobileMenu}
-                    className={({isActive})=>(isActive ? 'link-active' : 'link')}
+                    className={({ isActive }) => (isActive ? 'link-active' : 'link')}
                     to={route.path}
                     end
                   >
                     {route.name}
                   </NavLink>
                 </li>
-              );
+              )
             })}
             {isAuth && (
               <li>
@@ -146,5 +142,5 @@ export const Navbar = () => {
       </div>
     </nav>
 
-  );
-};
+  )
+}

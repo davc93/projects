@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react'
 
-import { getCompleteProjects } from "../utils/getProjects";
+import { getCompleteProjects } from '../utils/getProjects'
 export const useGetProjects = () => {
-  const [projects, setProjects]: any = React.useState([]);
-  const [loading, setLoading]:any = React.useState() ;
-  const [error, setError]:any = React.useState(null);
+  const [projects, setProjects]: any = React.useState([])
+  const [loading, setLoading]: any = React.useState()
+  const [error, setError]: any = React.useState(null)
   React.useEffect(() => {
-
     const getProjects = async () => {
       setLoading(true)
       try {
@@ -14,17 +13,17 @@ export const useGetProjects = () => {
         setProjects(projects)
         setLoading(false)
       } catch (error) {
-        setError("Error");
+        setError('Error')
         setLoading(false)
       }
-    };
+    }
 
-    getProjects();
-  }, []);
+    getProjects()
+  }, [])
 
   return {
     projects,
     loading,
-    error,
-  };
-};
+    error
+  }
+}

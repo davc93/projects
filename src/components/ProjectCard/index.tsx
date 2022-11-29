@@ -3,8 +3,8 @@ import { Project } from '../../models'
 import './styles.css'
 import { Link } from 'react-router-dom'
 
-export const ProjectCard = ({name,featureImage,description}:Project) => {
-  const slug = name.replaceAll(' ','-').toLowerCase()
+export const ProjectCard = ({ name, featureImage, description }: Project) => {
+  const slug = name.replaceAll(' ', '-').toLowerCase()
   return (
     <div className='project-card'>
       <img src={featureImage || ''} alt={name} />

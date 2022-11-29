@@ -9,12 +9,12 @@ import React from 'react'
 import { context } from './context'
 import { HomePage } from './routes/HomePage'
 import { ContactPage } from './routes/ContactPage'
-import {ServicesPage} from './routes/ServicesPage'
-import {ServiceDetail} from './routes/ServiceDetail'
+import { ServicesPage } from './routes/ServicesPage'
+import { ServiceDetail } from './routes/ServiceDetail'
 import { Layout } from './components/Layout'
 
-function App() {
-  const {isAuth}:any = React.useContext(context)
+function App () {
+  const { isAuth }: any = React.useContext(context)
   return (
       <BrowserRouter>
         <Layout>

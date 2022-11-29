@@ -7,19 +7,18 @@ export const ServiceDetail = () => {
   const handleClick = () => {
     window.location.href = 'mailto:davc93@gmail.com'
   }
-  const { services }:any = useContext(context)
+  const { services }: any = useContext(context)
   const { slug } = useParams()
   const service: Service = services.find((service: Service) => service.name.replaceAll(' ', '-').toLowerCase() == slug)
-  function createMarkup() {
-    return {__html: service.description};
+  function createMarkup () {
+    return { __html: service.description }
   }
-  
-  const priceFormated = new Intl.NumberFormat('en-US',{
-    style:'currency',
-    currency:'CLP'
+
+  const priceFormated = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'CLP'
   })
   if (service) {
-    
     return (
       <header className='mx-6 md:mx-24 mt-8'>
         <article className='flex flex-col gap-4 md:w-2/3'>

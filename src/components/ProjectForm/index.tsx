@@ -4,54 +4,45 @@ import { useGetTechs } from '../../hooks/useGetTechs'
 import { Tech } from '../../models'
 import './styles.css'
 export const ProjectForm = () => {
-  const techs =  useGetTechs()
+  const techs = useGetTechs()
   console.log(techs)
-  const [data, setdata]:any = React.useState({
-    name:'',
-    description:'',
-    repoLink:'',
-    envLink:'',
-    techs:[],
+  const [data, setdata]: any = React.useState({
+    name: '',
+    description: '',
+    repoLink: '',
+    envLink: '',
+    techs: [],
     featureImage: null
 
   })
-  const handleChange = (event:any) => {
-    if(event.target.files){
+  const handleChange = (event: any) => {
+    if (event.target.files) {
       console.log('es un archivos')
-      setdata({...data,featureImage:event.target.files[0]})
-      
+      setdata({ ...data, featureImage: event.target.files[0] })
     }
 
-    if(event.target.selectedOptions){
+    if (event.target.selectedOptions) {
       const techs = [...event.target.selectedOptions]
-      const techsClean = techs.map((tech)=>tech.value)
-      console.log(techsClean);
-      setdata({...data,techs:techsClean})
-      
-      
-    }
-    
-    
-    else {
-    
+      const techsClean = techs.map((tech) => tech.value)
+      console.log(techsClean)
+      setdata({ ...data, techs: techsClean })
+    } else {
       const id = event.target.id
       const value = event.target.value
       data[id] = value
     }
   }
-  const handleSubmit = async (event:any) => {
+  const handleSubmit = async (event: any) => {
     console.log(data)
     event.preventDefault()
     // console.log(data)
     try {
-      const response = await uploadProject(data);
-      console.log(response);
+      const response = await uploadProject(data)
+      console.log(response)
       event.target.reset()
-      
     } catch (error) {
       console.log(error)
     }
-
   }
 
   return (
@@ -63,7 +54,7 @@ export const ProjectForm = () => {
         <input type="file" name="featureImage" id='featureImage'/>
 
       <select multiple id='techs'>
-        {techs.map((tech:Tech)=>(
+        {techs.map((tech: Tech) => (
 
           <option key={tech.id} value={tech.id}>{tech.name}</option>
 

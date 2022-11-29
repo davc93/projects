@@ -1,25 +1,23 @@
-import { FormEvent } from "react"
-
-
+import { FormEvent } from 'react'
 
 export const ContactPage = () => {
-    const handleSubmit = (event: any) => {
-        event.preventDefault()
-        const { name, message } = event.target
-        const data = {
-            name: name.value,
-            message: message.value
-        }
-        fetch('http://localhost:5001/davc93/us-central1/helloWorld').then((res) => {
-            return res.text()
-        }).then((res) => {
-            console.log(res);
-        }).catch((error) => {
-            console.log(error)
-        })
+  const handleSubmit = (event: any) => {
+    event.preventDefault()
+    const { name, message } = event.target
+    const data = {
+      name: name.value,
+      message: message.value
     }
+    fetch('http://localhost:5001/davc93/us-central1/helloWorld').then(async (res) => {
+      return await res.text()
+    }).then((res) => {
+      console.log(res)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
 
-    return (
+  return (
         <main className="lg:p-8 ">
             <header className="flex justify-center text-center">
 
@@ -55,7 +53,6 @@ export const ContactPage = () => {
                             </a>
                         </div>
 
-
                     </div>
                     <div className="email flex flex-col gap-4 shadow-lg p-4 md:p-12">
                         <h3 className="">Email</h3>
@@ -74,5 +71,5 @@ export const ContactPage = () => {
             <button type="submit">Enviar</button>
         </form> */}
         </main>
-    )
+  )
 }

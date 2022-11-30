@@ -84,7 +84,7 @@ ul li ul li a {
     z-index: 2;
     // background: white;
     box-shadow: 1px 1px 1px 0 #00000036;
-    @apply lg:hidden;
+    @apply lg:hidden bg-white dark:bg-gray-900;
 }
 
 .menu--mobile .menu-items {

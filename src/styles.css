@@ -32,7 +32,7 @@ p {
     @apply font-light text-base dark:text-white
 }
 
-span,label {
+span,label,li {
 
     @apply font-medium text-base dark:text-white
 

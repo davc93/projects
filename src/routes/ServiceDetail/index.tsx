@@ -5,7 +5,7 @@ import { Service } from '../../models'
 
 export const ServiceDetail = () => {
   const handleClick = () => {
-    window.location.href = 'mailto:davc93@gmail.com'
+    window.location.href = '/contact'
   }
   const { services }: any = useContext(context)
   const { slug } = useParams()

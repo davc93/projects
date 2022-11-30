@@ -14,7 +14,7 @@ export const ServicesPage = () => {
         <section className="landing-page h-96 mb-6 lg:mb-16 md:w-2/3">
           <article className="flex flex-col gap-4">
             <h1>Landing Page</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta molestias obcaecati odio illo mollitia excepturi saepe natus labore ipsum enim ut porro modi commodi deserunt, consequatur ad eveniet aliquam cumque?</p>
+            <p>Service aimed at people or companies that already have a website, ideal for promoting new products, services, events and activities.</p>
             <Link className="btn btn--primary" to={'/service/landing-page'}>Create Landing Page</Link>
           </article>
           <img src="" alt="" />
@@ -22,7 +22,7 @@ export const ServicesPage = () => {
         <section className="web-site  h-96 md:flex md:justify-end">
         <article className="flex flex-col md:w-2/3 gap-4 md:text-end">
             <h1>Website</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, obcaecati nemo. Tenetur, magni laboriosam voluptates quia alias exercitationem dolor atque velit illum quis </p>
+            <p>Service oriented to people or companies that do not yet have a website, includes a contact form, contact buttons such as Phone, mail, Social networks, etc…, catalog page and product detail.</p>
             <Link to={'/service/web-site'} className=" md:self-end btn btn--primary">Create web page</Link>
           </article>
           <img src="" alt="" />

@@ -1,11 +1,10 @@
 // Menu desktop
 .menu--desktop {
-    @apply hidden lg:block z-10;
+    @apply hidden lg:block z-10 bg-white dark:bg-gray-900;
     width: 100%;
     position: fixed;
     justify-content: end;
     padding: 20px 0;
-    background: white;
     box-shadow: 1px 1px 1px 0 #00000057;
 
     a {
@@ -47,7 +46,7 @@
             padding-left: 0;
             left: 0;
             display: none;
-            background: white;
+            // background: white;
         }
 
 
@@ -83,14 +82,14 @@ ul li ul li a {
     box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
     position: fixed;
     z-index: 2;
-    background: white;
+    // background: white;
     box-shadow: 1px 1px 1px 0 #00000036;
     @apply lg:hidden;
 }
 
 .menu--mobile .menu-items {
     padding-top: 120px;
-    background: white;
+    @apply bg-white dark:bg-gray-900;
     width: 90%;
     box-shadow: 1px 0px 3px 0px #0000003d;
     height: 100vh;
@@ -166,6 +165,7 @@ ul li ul li a {
     width: 100%;
     border-radius: 10px;
     background: #0e2431;
+    @apply dark:bg-white ;
 }
 
 .nav-container .hamburger-lines .line1 {

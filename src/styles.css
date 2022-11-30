@@ -21,20 +21,20 @@ h2 {
 }
 
 h3 {
-    @apply font-semibold text-2xl 
+    @apply font-semibold text-2xl dark:text-white
 }   
 
 h4 {
-    @apply font-normal text-lg 
+    @apply font-normal text-lg dark:text-white
 }
 
 p {
-    @apply font-light text-base
+    @apply font-light text-base dark:text-white
 }
 
-span {
+span,label {
 
-    @apply font-medium text-base
+    @apply font-medium text-base dark:text-white
 
 }
 
@@ -42,10 +42,10 @@ li{
     list-style: none;
 }
 .link {
-    @apply font-semibold text-base hover:text-blue-500
+    @apply font-semibold text-base hover:text-blue-500 text-black dark:text-white;
 }
 .link-active{
-    @apply font-semibold text-base text-primary-500
+    @apply font-semibold text-base text-primary-500;
 }
 .btn--primary{
 
@@ -157,7 +157,7 @@ li{
     @apply flex flex-col items-center
 }
 .card--tech-project-detail span{
-    @apply  font-bold text-gray-600
+    @apply  font-bold
 }
 
 

@@ -21,7 +21,7 @@ export const ServicesPage = () => {
         </section>
         <section className="web-site  h-96 md:flex md:justify-end">
         <article className="flex flex-col md:w-2/3 gap-4 md:text-end">
-            <h1>Web Page</h1>
+            <h1>Website</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, obcaecati nemo. Tenetur, magni laboriosam voluptates quia alias exercitationem dolor atque velit illum quis </p>
             <Link to={'/service/web-site'} className=" md:self-end btn btn--primary">Create web page</Link>
           </article>

@@ -160,3 +160,31 @@ li{
     @apply  font-bold text-gray-600
 }
 
+
+.service-description {
+    @apply py-8 lg:py-12
+}
+.service-description > div{
+    @apply flex flex-col gap-4 md:w-2/3 mb-8;
+}
+.service-description a{
+
+    @apply font-bold text-primary-400
+}
+.service-description a:hover{
+
+    @apply text-primary-600
+}
+.service-description ul{
+    @apply mx-6
+}
+
+.service-description ul li {
+    @apply font-light text-base;
+    list-style: square;
+
+}
+
+.service-description button {
+    @apply mt-6
+}

@@ -21,8 +21,7 @@ export const ServiceDetail = () => {
   if (service) {
     return (
       <header className='mx-6 md:mx-24 mt-8'>
-        <article className='flex flex-col gap-4 md:w-2/3'>
-          <h1>{service.name}</h1>
+        <article className='service-description'>
           <div dangerouslySetInnerHTML={createMarkup()}/>
           <span>{ priceFormated.format(service.price) } / Per section</span>
           {service.discount && (<span>{service.price * (1 - service.discount)}</span>)}

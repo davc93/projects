@@ -7,7 +7,8 @@ const getServicesData = async () => {
   const services: Service[] = []
   const snapShot = await getDocs(collection(db, 'services'))
   snapShot.forEach((doc: any) => {
-    services.push(doc.data())
+    const service = doc.data()
+    services.push(service)
   })
   return services
 }
@@ -18,7 +19,6 @@ const parseServicesDescription = async (services: Service[]) => {
       const html = await markdownToHtml(service.description)
       service.description = html
       if (services.indexOf(service) === services.length - 1) {
-        console.log(service)
         resolve(services)
       }
     })

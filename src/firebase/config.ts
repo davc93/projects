@@ -30,9 +30,9 @@ export const db = getFirestore(app)
 export const auth = getAuth(app)
 const analytics = getAnalytics(app)
 
-if (import.meta.env.DEV) {
-  connectFunctionsEmulator(functions, 'localhost', 5001)
-  connectFirestoreEmulator(db, 'localhost', 8080)
-  connectAuthEmulator(auth, 'http://localhost:9099')
-  connectStorageEmulator(storage, 'localhost', 9199)
-}
+// if (import.meta.env.DEV) {
+//   connectFunctionsEmulator(functions, 'localhost', 5001)
+//   connectFirestoreEmulator(db, 'localhost', 8080)
+//   connectAuthEmulator(auth, 'http://localhost:9099')
+//   connectStorageEmulator(storage, 'localhost', 9199)
+// }

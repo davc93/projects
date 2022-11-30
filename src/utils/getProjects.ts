@@ -38,7 +38,6 @@ const getCompleteProjects = async () => {
           projectsWithoutTechs.indexOf(project) ===
           projectsWithoutTechs.length - 1
         ) {
-          console.log(project)
           resolve(projectsWithoutTechs)
         }
       })

@@ -1,0 +1,21 @@
+.certificates {
+    @apply flex flex-col items-center gap-12 mt-12
+}
+
+.certificates-container ul {
+
+    @apply grid grid-cols-1 gap-12 md:gap-24  md:grid-cols-3
+}
+
+.certificates-container li {
+    @apply self-center
+}
+.certificates-container div {
+
+@apply flex flex-col items-center text-center
+}
+
+.certificates-container img{
+    @apply w-36 md:w-40
+
+}

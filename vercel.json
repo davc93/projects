@@ -4,6 +4,11 @@
             "src": "/[^.]+",
             "dest": "/",
             "status": 200
+        },
+        {
+            "src":"/test",
+            "dest":"https://about-me-davc93.vercel.app/",
+            "status":200
         }
     ]
 }

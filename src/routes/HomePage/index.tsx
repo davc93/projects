@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './index.css'
+
 export const HomePage = () => {
   return (
     <>
@@ -8,8 +8,9 @@ export const HomePage = () => {
             <div className="hero__text--container space-y-4 w-full sm:w-1/2 md:text-end">
               <h1>Diego Vergara</h1>
               <p>
-                Welcome to my web page, I am a javascript developer in backend and frontend, especially in frontend, i'm from Chile, I consider myself passionate about what I do and all
-                about tech, 
+                Welcome to my web page, i'm a web frontend developer from Chile
+                since 2021, I consider myself passionate about what I do and all
+                about tech.{' '}
               </p>
             </div>
             <div className="hero__img--container flex flex-col">
@@ -90,50 +91,8 @@ export const HomePage = () => {
           </section>
           <section className="cta--projects flex flex-col gap-2 text-center items-center">
             <h2>See my portfolio</h2>
-            <h4>Take a look of what can we build</h4>
+            <h4>take a look of what can we build</h4>
             <Link to='/projects' className="btn btn--primary mt-8">Click here</Link>
-          </section>
-          <section className='certificates'>
-            <h2>Certificates</h2>
-            <div className="certificates-container">
-              <ul>
-                <li>
-                  <div>
-                    <img src="./fullstack.png" alt="Full Stack Developer con JavaScript" />
-                    <h3>Full Stack Developer con JavaScript</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="./react.svg" alt="Frontend con React.js" />
-                    <h3>Frontend con React.js</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="./checkoutpro.png" alt="Checkout Pro" />
-                    <h3>Checkout Pro</h3>
-                    <h4>Mercado Libre</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="./javascript.png" alt="JavaScript a Profundidad" />
-                    <h3>JavaScript a Profundidad</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="./htmlycss.png" alt="HTML y CSS a Profundidad" />
-                    <h3>HTML y CSS a Profundidad</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </section>
 
         </main>

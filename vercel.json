@@ -1,8 +1,8 @@
 {
-    "routes": [
+    "rewrites": [
 
         {
-            "src":"/test",
+            "src":"/test/",
             "dest":"https://about-me-davc93.vercel.app/",
             "status":200
         },
